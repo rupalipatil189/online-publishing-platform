@@ -1,0 +1,47 @@
+<mat-card class="article-card" [class.featured-card]="variant() === 'featured'">
+  <div class="thumbnail-container">
+    <img [src]="article().thumbnail" [alt]="article().title" />
+
+    @if (article().editorPick) {
+      <span class="editor-badge"> Editor's Pick </span>
+    }
+  </div>
+
+  <mat-card-content>
+    <div class="article-category">
+      {{ article().category }}
+    </div>
+
+    <h3>
+      {{ article().title }}
+    </h3>
+
+    <p class="description">
+      {{ article().description }}
+    </p>
+
+    <div class="article-meta">
+      <div class="author">
+        @if (article().authorAvatar) {
+          <img [src]="article().authorAvatar" [alt]="article().authorName" />
+        }
+
+        <span>
+          {{ article().authorName }}
+        </span>
+      </div>
+
+      <span>
+        {{ article().publishedAt | date: 'MMM d, yyyy' }}
+      </span>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a mat-button color="primary" [routerLink]="['/article', article().id]">
+      Read Article
+
+      <mat-icon> arrow_forward </mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>

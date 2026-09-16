@@ -1,0 +1,103 @@
+<div class="authors-page">
+  <!-- HEADER -->
+  <section class="authors-hero">
+    <span class="section-label"> OUR WRITERS </span>
+
+    <h1>Author Directory</h1>
+
+    <p>Meet the writers behind the stories. Explore their work, ideas and perspectives.</p>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="authors-section">
+    <div class="search-container">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label> Search authors </mat-label>
+
+        <mat-icon matPrefix> search </mat-icon>
+
+        <input
+          matInput
+          [value]="searchText()"
+          (input)="onSearch($event)"
+          placeholder="Search by author name..."
+        />
+
+        @if (searchText()) {
+          <button mat-icon-button matSuffix type="button" (click)="clearSearch()">
+            <mat-icon> close </mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </div>
+
+    <!-- LOADING -->
+
+    @if (loading()) {
+      <div class="loading-state">
+        <mat-icon> hourglass_empty </mat-icon>
+
+        <p>Loading authors...</p>
+      </div>
+    }
+
+    <!-- AUTHORS -->
+
+    @if (!loading() && filteredAuthors().length > 0) {
+      <div class="authors-grid">
+        @for (author of filteredAuthors(); track author.id) {
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img [src]="author.avatar" [alt]="author.name" class="author-image" />
+            </div>
+
+            <div class="author-content">
+              <h2>
+                {{ author.name }}
+              </h2>
+
+              @if (author.role) {
+                <span class="author-role">
+                  {{ author.role }}
+                </span>
+              }
+
+              <p class="author-bio">
+                {{ author.bio }}
+              </p>
+
+              @if (author.location) {
+                <div class="author-location">
+                  <mat-icon> location_on </mat-icon>
+
+                  <span>
+                    {{ author.location }}
+                  </span>
+                </div>
+              }
+
+              <a mat-stroked-button color="primary" [routerLink]="['/author', author.id]">
+                View Profile
+                <mat-icon> arrow_forward </mat-icon>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    <!-- EMPTY -->
+
+    @if (!loading() && filteredAuthors().length === 0) {
+      <div class="empty-state">
+        <mat-icon> person_search </mat-icon>
+
+        <h2>No authors found</h2>
+
+        <p>Try searching with a different name.</p>
+
+        <button mat-flat-button color="primary" (click)="clearSearch()">Clear Search</button>
+      </div>
+    }
+  </section>
+</div>

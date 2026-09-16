@@ -1,0 +1,71 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <span class="section-label"> WELCOME BACK </span>
+
+      <h1>Sign in</h1>
+
+      <p>Sign in to continue reading and sharing stories.</p>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="error-message">
+        {{ errorMessage() }}
+      </div>
+    }
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Email </mat-label>
+
+        <input matInput type="email" formControlName="email" />
+
+        @if (loginForm.controls.email.touched && loginForm.controls.email.invalid) {
+          <mat-error> Please enter a valid email. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Password </mat-label>
+
+        <input matInput type="password" formControlName="password" />
+
+        @if (loginForm.controls.password.touched && loginForm.controls.password.invalid) {
+          <mat-error> Password is required. </mat-error>
+        }
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="submit-button"
+        [disabled]="loading()"
+      >
+        {{ loading() ? 'Signing in...' : 'Sign In' }}
+      </button>
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <button
+      mat-stroked-button
+      type="button"
+      class="google-button"
+      (click)="loginWithGoogle()"
+      [disabled]="loading()"
+    >
+      <mat-icon> login </mat-icon>
+
+      Continue with Google
+    </button>
+
+    <div class="auth-footer">
+      Don't have an account?
+
+      <a routerLink="/signup"> Create an account </a>
+    </div>
+  </div>
+</div>

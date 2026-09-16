@@ -1,0 +1,216 @@
+<div class="create-article-page">
+  <!-- PAGE HEADER -->
+
+  <div class="page-header">
+    <div>
+      <a mat-button routerLink="/articles">
+        <mat-icon> arrow_back </mat-icon>
+
+        Back to Articles
+      </a>
+
+      <h1>
+        {{ editMode() ? 'Edit Article' : 'Create New Post' }}
+      </h1>
+
+      <p>
+        {{
+          editMode()
+            ? 'Update and republish your article.'
+            : 'Write, format and publish your article.'
+        }}
+      </p>
+
+      <p>Write, format and publish your article.</p>
+    </div>
+  </div>
+
+  <!-- SUCCESS MESSAGE -->
+
+  @if (message()) {
+    <div class="success-message">
+      <mat-icon> check_circle </mat-icon>
+
+      {{ message() }}
+    </div>
+  }
+
+  <!-- ERROR MESSAGE -->
+
+  @if (errorMessage()) {
+    <div class="error-message">
+      <mat-icon> error </mat-icon>
+
+      {{ errorMessage() }}
+    </div>
+  }
+
+  <!-- FORM -->
+
+  <form [formGroup]="articleForm">
+    <div class="editor-layout">
+      <!-- ========================================= -->
+      <!-- MAIN EDITOR -->
+      <!-- ========================================= -->
+
+      <section class="editor-card">
+        <mat-card>
+          <!-- TITLE -->
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Article Title </mat-label>
+
+            <input matInput formControlName="title" placeholder="Enter your article title" />
+
+            @if (articleForm.get('title')?.hasError('required')) {
+              <mat-error> Title is required </mat-error>
+            }
+
+            @if (articleForm.get('title')?.hasError('minlength')) {
+              <mat-error> Title must contain at least 5 characters </mat-error>
+            }
+          </mat-form-field>
+
+          <!-- DESCRIPTION -->
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Short Description </mat-label>
+
+            <textarea
+              matInput
+              rows="4"
+              formControlName="description"
+              placeholder="Write a short description..."
+            >
+            </textarea>
+
+            <mat-hint> Maximum 300 characters </mat-hint>
+          </mat-form-field>
+
+          <!-- RICH TEXT EDITOR -->
+
+          <div class="editor-section">
+            <label class="editor-label"> Article Content </label>
+
+            <div class="ngx-editor-wrapper">
+              <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+
+              <ngx-editor
+                [editor]="editor"
+                formControlName="content"
+                [placeholder]="'Start writing your article...'"
+                class="article-editor"
+              >
+              </ngx-editor>
+            </div>
+          </div>
+
+          <!-- TAGS -->
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Tags </mat-label>
+
+            <input matInput formControlName="tags" placeholder="Angular, AI, Technology" />
+
+            <mat-hint> Separate tags using commas </mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label> Author Avatar URL </mat-label>
+
+            <input
+              matInput
+              formControlName="authorAvatar"
+              placeholder="https://example.com/avatar.jpg"
+            />
+
+            <mat-hint> Enter the author's profile image URL </mat-hint>
+          </mat-form-field>
+        </mat-card>
+      </section>
+
+      <aside class="editor-sidebar">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> Publish </mat-card-title>
+          </mat-card-header>
+
+          <mat-divider></mat-divider>
+
+          <mat-card-content>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label> Category </mat-label>
+
+              <mat-select formControlName="category">
+                @for (category of categories; track category) {
+                  <mat-option [value]="category">
+                    {{ category }}
+                  </mat-option>
+                }
+              </mat-select>
+
+              @if (articleForm.get('category')?.hasError('required')) {
+                <mat-error> Category is required </mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label> Thumbnail URL </mat-label>
+
+              <input
+                matInput
+                formControlName="thumbnail"
+                placeholder="https://example.com/image.jpg"
+              />
+
+              <mat-hint> Enter an image URL </mat-hint>
+            </mat-form-field>
+          </mat-card-content>
+
+          <!-- ACTIONS -->
+
+          <mat-card-actions class="publish-actions">
+            <button mat-stroked-button type="button" [disabled]="loading()" (click)="saveDraft()">
+              <mat-icon> save </mat-icon>
+
+              {{ editMode() ? 'Update Draft' : 'Save Draft' }}
+            </button>
+
+            <button
+              mat-flat-button
+              color="primary"
+              type="button"
+              [disabled]="loading()"
+              (click)="publish()"
+            >
+              <mat-icon> publish </mat-icon>
+
+              {{ editMode() ? 'Update & Publish' : 'Publish' }}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+
+
+        <mat-card class="tips-card">
+          <mat-card-header>
+            <mat-card-title> Writing Tips </mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <ul>
+              <li>Use a clear and descriptive title.</li>
+
+              <li>Break long content into sections.</li>
+
+              <li>Use images to improve readability.</li>
+
+              <li>Add relevant tags.</li>
+
+              <li>Save your work as a draft regularly.</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </aside>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,180 @@
+<section class="comments-section">
+  <div class="comments-header">
+    <div>
+      <h2>
+        Comments
+        <span class="comment-count">
+          {{ comments().length }}
+        </span>
+      </h2>
+
+      <p>Join the conversation</p>
+    </div>
+
+    <mat-form-field appearance="outline" class="sort-field">
+      <mat-label>Sort by</mat-label>
+
+      <mat-select [value]="sortBy()" (selectionChange)="setSort($event.value)">
+        <mat-option value="newest"> Newest </mat-option>
+
+        <mat-option value="oldest"> Oldest </mat-option>
+
+        <mat-option value="liked"> Most liked </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Add Comment -->
+
+  @if (authService.isLoggedIn()) {
+    <div class="add-comment">
+      <img
+        class="avatar"
+        [src]="authService.currentUser()?.photoURL || 'https://i.pravatar.cc/150?img=12'"
+        alt="User"
+      />
+
+      <div class="comment-input">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label> Write a comment... </mat-label>
+
+          <textarea matInput rows="3" [(ngModel)]="newComment"> </textarea>
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="addComment()"
+          [disabled]="!newComment.trim()"
+        >
+          <mat-icon>send</mat-icon>
+
+          Post Comment
+        </button>
+      </div>
+    </div>
+  } @else {
+    <div class="login-message">
+      <mat-icon>lock</mat-icon>
+
+      <span> Please login to comment on this article. </span>
+    </div>
+  }
+
+  <!-- Comment List -->
+
+  <div class="comments-list">
+    @for (comment of topLevelComments; track comment.id) {
+      <div class="comment">
+        <div class="comment-row">
+          <img class="avatar" [src]="comment.userAvatar" [alt]="comment.userName" />
+
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong>
+                {{ comment.userName }}
+              </strong>
+
+              <span>
+                {{ comment.createdAt | date: 'mediumDate' }}
+              </span>
+            </div>
+
+            <p>
+              {{ comment.content }}
+            </p>
+
+            <div class="comment-actions">
+              @if (authService.isLoggedIn()) {
+                <button mat-button (click)="startReply(comment.id!)">
+                  <mat-icon>reply</mat-icon>
+
+                  Reply
+                </button>
+              }
+
+              @if (authService.currentUser()?.uid === comment.userId) {
+                <button mat-button color="warn" (click)="deleteComment(comment)">
+                  <mat-icon>delete</mat-icon>
+
+                  Delete
+                </button>
+              }
+            </div>
+
+            <!-- Reply -->
+
+            @if (replyingTo() === comment.id) {
+              <div class="reply-box">
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label> Write a reply... </mat-label>
+
+                  <textarea matInput rows="2" [(ngModel)]="replyText"> </textarea>
+                </mat-form-field>
+
+                <div class="reply-actions">
+                  <button mat-button (click)="cancelReply()">Cancel</button>
+
+                  <button
+                    mat-flat-button
+                    color="primary"
+                    (click)="addReply(comment.id!)"
+                    [disabled]="!replyText.trim()"
+                  >
+                    Reply
+                  </button>
+                </div>
+              </div>
+            }
+
+            <!-- Replies -->
+
+            @if (comment.id && getReplies(comment.id).length) {
+              <div class="replies">
+                @for (reply of getReplies(comment.id); track reply.id) {
+                  <div class="reply">
+                    <img class="avatar small" [src]="reply.userAvatar" [alt]="reply.userName" />
+
+                    <div class="comment-body">
+                      <div class="comment-meta">
+                        <strong>
+                          {{ reply.userName }}
+                        </strong>
+
+                        <span>
+                          {{ reply.createdAt | date: 'mediumDate' }}
+                        </span>
+                      </div>
+
+                      <p>
+                        {{ reply.content }}
+                      </p>
+
+                      <div class="comment-actions">
+                        @if (authService.currentUser()?.uid === reply.userId) {
+                          <button mat-button color="warn" (click)="deleteComment(reply)">
+                            <mat-icon> delete </mat-icon>
+
+                            Delete
+                          </button>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="no-comments">
+        <mat-icon> chat_bubble_outline </mat-icon>
+
+        <h3>No comments yet</h3>
+
+        <p>Be the first to share your thoughts.</p>
+      </div>
+    }
+  </div>
+</section>

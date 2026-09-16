@@ -1,0 +1,268 @@
+.create-article-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 6%;
+}
+
+
+// =============================================
+// HEADER
+// =============================================
+
+.page-header {
+
+  margin-bottom: 30px;
+
+  h1 {
+    margin: 15px 0 5px;
+
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+
+    color: #6b7280;
+  }
+}
+
+
+// =============================================
+// LAYOUT
+// =============================================
+
+.editor-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    340px;
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+
+// =============================================
+// MAIN EDITOR
+// =============================================
+
+.editor-card {
+
+  mat-card {
+    padding: 25px;
+  }
+
+}
+
+
+// =============================================
+// FORM
+// =============================================
+
+.full-width {
+
+  width: 100%;
+
+  margin-bottom: 18px;
+
+}
+
+
+// =============================================
+// EDITOR
+// =============================================
+
+.editor-section {
+
+  margin-bottom: 25px;
+}
+
+
+.editor-label {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+
+.ngx-editor-wrapper {
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+
+ngx-editor-menu {
+
+  display: block;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.article-editor {
+
+  min-height: 400px;
+
+  display: block;
+}
+
+
+// =============================================
+// SIDEBAR
+// =============================================
+
+.editor-sidebar {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+.editor-sidebar mat-card {
+
+  overflow: hidden;
+}
+
+
+// =============================================
+// PUBLISH ACTIONS
+// =============================================
+
+.publish-actions {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 16px;
+}
+
+
+.publish-actions button {
+
+  width: 100%;
+}
+
+
+// =============================================
+// MESSAGES
+// =============================================
+
+.success-message {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  background: #ecfdf5;
+
+  color: #047857;
+}
+
+
+.error-message {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+
+// =============================================
+// TIPS
+// =============================================
+
+.tips-card {
+
+  ul {
+
+    padding-left: 20px;
+
+    margin: 10px 0 0;
+  }
+
+  li {
+
+    margin-bottom: 10px;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+  }
+}
+
+
+// =============================================
+// RESPONSIVE
+// =============================================
+
+@media (max-width: 900px) {
+
+  .editor-layout {
+
+    grid-template-columns: 1fr;
+  }
+
+  .editor-sidebar {
+
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .create-article-page {
+
+    padding: 25px 15px;
+  }
+
+  .editor-card mat-card {
+
+    padding: 15px;
+  }
+
+}

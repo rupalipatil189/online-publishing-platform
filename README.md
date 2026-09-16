@@ -57,3 +57,110 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Features
+Google Authentication using Firebase
+Article listing with pagination
+Search and sorting
+Featured articles
+Explore articles and authors
+Author profiles and author search
+Article details with related articles
+Comments with threaded replies
+Comment sorting – Newest, Oldest, Most Liked
+Rich text editor using ngx-editor
+Create, edit, delete and publish articles
+Save articles as drafts
+My Articles section
+Tags – search and filter articles by tags
+Responsive UI
+Web Worker for background processing for search
+
+## Technologies
+
+* Angular 21
+* TypeScript
+* HTML
+* SCSS
+* Angular Material
+* RxJS
+* Angular Signals
+* Reactive Forms
+* JSON Server
+* Vitest
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+* Node.js
+* npm
+* Angular CLI
+* JSON Server
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+## Run the Application
+
+Start the Angular application:
+
+```bash
+ng serve/npm run start
+```
+
+The application will be available at:
+
+```text
+http://localhost:4200
+```
+
+## Run Mock API
+
+RentHub uses JSON Server as a mock backend.
+
+Start the server using:
+
+```bash
+npm run api: 
+json-server --watch db.json --port 3001
+```
+
+The API will be available at:
+
+```text
+http://localhost:3001
+```
+
+## Run Tests
+
+Run all unit tests:
+
+```bash
+ng test
+```
+
+Run a specific test file:
+
+```bash
+ng test --include="src/app/core/services/auth.service.spec.ts"
+```
+
+## Build
+
+To build the application:
+
+```bash
+ng build
+
+```
+## Demo Credentials
+Email: rupalipatilfe@gmail.com
+Password: Test@123
+
+The production build will be generated in the `dist/` directory.

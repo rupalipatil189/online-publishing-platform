@@ -1,0 +1,480 @@
+{
+  "users": [],
+  "authors": [
+    {
+      "id": "101",
+      "name": "Aarav Sharma",
+      "avatar": "https://i.pravatar.cc/300?img=12",
+      "bio": "Technology writer passionate about artificial intelligence, software development and the future of digital experiences.",
+      "role": "Technology Writer",
+      "location": "Pune, India"
+    },
+    {
+      "id": "102",
+      "name": "Priya Mehta",
+      "avatar": "https://i.pravatar.cc/300?img=47",
+      "bio": "Lifestyle and wellness writer sharing practical ideas for living a healthier and more balanced life.",
+      "role": "Lifestyle Writer",
+      "location": "Mumbai, India"
+    },
+    {
+      "id": "103",
+      "name": "Rohan Deshmukh",
+      "avatar": "https://i.pravatar.cc/300?img=33",
+      "bio": "Travel enthusiast and storyteller who writes about destinations, culture, food and memorable journeys.",
+      "role": "Travel Writer",
+      "location": "Bangalore, India"
+    },
+    {
+      "id": "104",
+      "name": "Sneha Kulkarni",
+      "avatar": "https://i.pravatar.cc/300?img=44",
+      "bio": "Creative writer interested in productivity, personal growth and building meaningful everyday habits.",
+      "role": "Personal Growth Writer",
+      "location": "Pune, India"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "The Future of Artificial Intelligence",
+      "description": "Explore how artificial intelligence is transforming businesses, education, healthcare, and everyday life.",
+      "content": "<h2>The Future of AI</h2><p>Artificial intelligence is rapidly changing the way we work and interact with technology. From intelligent assistants to advanced analytics, AI is becoming part of everyday life.</p><p>Organizations are increasingly using AI to automate repetitive tasks, improve decision making, and create personalized experiences.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+      "category": "Technology",
+      "authorId": "101",
+      "authorName": "Aarav Sharma",
+      "authorAvatar": "https://i.pravatar.cc/150?img=12",
+      "publishedAt": "2026-09-07T09:30:00Z",
+      "createdAt": "2026-09-06T09:30:00Z",
+      "updatedAt": "2026-09-07T09:30:00Z",
+      "status": "PUBLISHED",
+      "featured": true,
+      "editorPick": true,
+      "likes": 245,
+      "views": 3240,
+      "tags": [
+        "AI",
+        "Technology",
+        "Future"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "10 Habits That Can Improve Your Productivity",
+      "description": "Simple and practical habits that can help you stay focused, organized, and productive throughout the day.",
+      "content": "<h2>Build Better Habits</h2><p>Productivity is not about working longer hours. It is about using your time effectively and focusing on the work that matters.</p><p>Start your day by identifying your most important tasks, eliminate distractions, and take regular breaks to maintain your energy.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
+      "category": "Lifestyle",
+      "authorId": "102",
+      "authorName": "Priya Mehta",
+      "authorAvatar": "https://i.pravatar.cc/150?img=47",
+      "authorBio": "Sarah is a technology writer who enjoys exploring AI, emerging technologies and their impact on society.",
+      "publishedAt": "2026-09-06T08:00:00Z",
+      "createdAt": "2026-09-05T08:00:00Z",
+      "updatedAt": "2026-09-06T08:00:00Z",
+      "status": "PUBLISHED",
+      "featured": true,
+      "editorPick": false,
+      "likes": 189,
+      "views": 2780,
+      "tags": [
+        "Productivity",
+        "Lifestyle",
+        "Habits"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "A Beginner's Guide to Modern Web Development",
+      "description": "Learn the fundamentals of modern web development and understand the technologies behind today's websites.",
+      "content": "<h2>Modern Web Development</h2><p>Web development has evolved significantly over the last decade. Modern applications are faster, more interactive, and easier to maintain.</p><p>HTML, CSS, JavaScript, TypeScript, and modern frameworks such as Angular and React are commonly used to build today's web applications.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
+      "category": "Development",
+      "authorId": "103",
+      "authorName": "Rohan Kulkarni",
+      "authorAvatar": "https://i.pravatar.cc/150?img=11",
+      "authorBio": "Sarah is a technology writer who enjoys exploring AI, emerging technologies and their impact on society.",
+      "publishedAt": "2026-09-05T10:15:00Z",
+      "createdAt": "2026-09-04T10:15:00Z",
+      "updatedAt": "2026-09-05T10:15:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": true,
+      "likes": 320,
+      "views": 4520,
+      "tags": [
+        "Angular",
+        "JavaScript",
+        "Web Development"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "How to Start Your Morning Right",
+      "description": "A healthy morning routine can set the tone for a productive and positive day.",
+      "content": "<h2>Create a Morning Routine</h2><p>Your morning routine does not need to be complicated. A few simple habits can make a significant difference.</p><p>Drink water, move your body, avoid checking your phone immediately, and spend a few minutes planning your day.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800",
+      "category": "Wellness",
+      "authorId": "104",
+      "authorName": "Sneha Joshi",
+      "authorAvatar": "https://i.pravatar.cc/150?img=32",
+      "publishedAt": "2026-09-04T07:30:00Z",
+      "createdAt": "2026-09-03T07:30:00Z",
+      "updatedAt": "2026-09-04T07:30:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 98,
+      "views": 1450,
+      "tags": [
+        "Morning",
+        "Health",
+        "Wellness"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "The Rise of Remote Work",
+      "description": "Remote work has changed how companies operate and how employees think about their careers.",
+      "content": "<h2>Remote Work</h2><p>Remote work has become an important part of the modern workplace. Employees now have more flexibility in choosing where they work.</p><p>Companies are also adapting by investing in collaboration tools, flexible policies, and remote-first cultures.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800",
+      "category": "Business",
+      "authorId": "105",
+      "authorName": "Vikram Desai",
+      "authorAvatar": "https://i.pravatar.cc/150?img=68",
+      "publishedAt": "2026-09-03T11:00:00Z",
+      "createdAt": "2026-09-02T11:00:00Z",
+      "updatedAt": "2026-09-03T11:00:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": true,
+      "likes": 275,
+      "views": 3890,
+      "tags": [
+        "Remote Work",
+        "Business",
+        "Career"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Exploring the Beauty of Maharashtra",
+      "description": "From peaceful hill stations to historic forts, discover some amazing places to explore in Maharashtra.",
+      "content": "<h2>Discover Maharashtra</h2><p>Maharashtra is home to beautiful landscapes, historic forts, vibrant cities, and peaceful hill stations.</p><p>Places such as Lonavala, Mahabaleshwar, Matheran, and the Sahyadri mountains offer excellent opportunities for travel and exploration.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=800",
+      "category": "Travel",
+      "authorId": "106",
+      "authorName": "Neha Patil",
+      "authorAvatar": "https://i.pravatar.cc/150?img=44",
+      "publishedAt": "2026-09-02T09:45:00Z",
+      "createdAt": "2026-09-01T09:45:00Z",
+      "updatedAt": "2026-09-02T09:45:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 156,
+      "views": 2340,
+      "tags": [
+        "Travel",
+        "Maharashtra",
+        "Nature"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Understanding TypeScript in Angular",
+      "description": "Learn why TypeScript is an important part of Angular development and how it improves application quality.",
+      "content": "<h2>TypeScript and Angular</h2><p>Angular applications are built using TypeScript, which provides static typing and modern language features.</p><p>Interfaces, types, generics, decorators, and access modifiers make large Angular applications easier to develop and maintain.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+      "category": "Programming",
+      "authorId": "103",
+      "authorName": "Rohan Kulkarni",
+      "authorAvatar": "https://i.pravatar.cc/150?img=11",
+      "publishedAt": "2026-09-01T12:00:00Z",
+      "createdAt": "2026-08-31T12:00:00Z",
+      "updatedAt": "2026-09-01T12:00:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": true,
+      "likes": 410,
+      "views": 5980,
+      "tags": [
+        "Angular",
+        "TypeScript",
+        "Programming"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "The Art of Effective Communication",
+      "description": "Good communication is one of the most valuable skills in both personal and professional life.",
+      "content": "<h2>Communication Matters</h2><p>Effective communication is more than simply speaking. It involves listening, understanding different perspectives, and expressing ideas clearly.</p><p>Practicing active listening and asking thoughtful questions can significantly improve communication.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
+      "category": "Personal Development",
+      "authorId": "102",
+      "authorName": "Priya Mehta",
+      "authorAvatar": "https://i.pravatar.cc/150?img=47",
+      "publishedAt": "2026-08-30T08:30:00Z",
+      "createdAt": "2026-08-29T08:30:00Z",
+      "updatedAt": "2026-08-30T08:30:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 134,
+      "views": 1890,
+      "tags": [
+        "Communication",
+        "Career",
+        "Self Improvement"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Building Better User Experiences",
+      "description": "Discover the principles designers and developers can use to create simple and enjoyable digital experiences.",
+      "content": "<h2>User Experience</h2><p>A good user experience makes applications easy to understand and enjoyable to use.</p><p>Clear navigation, consistent design, accessibility, fast loading times, and useful feedback are key elements of a good experience.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800",
+      "category": "Design",
+      "authorId": "101",
+      "authorName": "Aarav Sharma",
+      "authorAvatar": "https://i.pravatar.cc/150?img=12",
+      "publishedAt": "2026-08-28T14:00:00Z",
+      "createdAt": "2026-08-27T14:00:00Z",
+      "updatedAt": "2026-08-28T14:00:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": true,
+      "likes": 225,
+      "views": 3100,
+      "tags": [
+        "UX",
+        "UI",
+        "Design"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Getting Started with Personal Finance",
+      "description": "Simple financial habits that can help you manage your money and build a stronger financial future.",
+      "content": "<h2>Personal Finance Basics</h2><p>Managing personal finances starts with understanding where your money comes from and where it goes.</p><p>Create a budget, build an emergency fund, avoid unnecessary debt, and set clear financial goals.</p>",
+      "thumbnail": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800",
+      "category": "Finance",
+      "authorId": "105",
+      "authorName": "Vikram Desai",
+      "authorAvatar": "https://i.pravatar.cc/150?img=68",
+      "publishedAt": "2026-08-26T10:00:00Z",
+      "createdAt": "2026-08-25T10:00:00Z",
+      "updatedAt": "2026-08-26T10:00:00Z",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 112,
+      "views": 1670,
+      "tags": [
+        "Finance",
+        "Money",
+        "Investment"
+      ]
+    },
+    {
+      "title": "Test article1",
+      "description": "changed description",
+      "content": "<p>Article<strong> Rupali A<span style=\"background-color: rgb(251, 202, 4);\">rticle</span></strong></p>",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+      "category": "Technology",
+      "authorId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "authorName": "rupalipatilfe@gmail.com",
+      "authorAvatar": "",
+      "publishedAt": "",
+      "createdAt": "2026-09-08T10:10:30.373Z",
+      "updatedAt": "2026-09-11T06:15:44.430Z",
+      "scheduledAt": "",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 0,
+      "views": 0,
+      "tags": [
+        "Technology"
+      ],
+      "id": "RsUmhdI87DA"
+    },
+    {
+      "title": "Python Basic",
+      "description": "Test python",
+      "content": "<p>Yets</p>",
+      "thumbnail": "https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg",
+      "category": "Technology",
+      "authorId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "authorName": "rupalipatilfe@gmail.com",
+      "authorAvatar": "https://www.google.com/imgres?q=PR%20name%20url&imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fshutterstock%2Fphotos%2F725857504%2Fdisplay_1500%2Fstock-vector-initial-letter-pr-logotype-company-name-orange-and-magenta-color-on-circle-and-swoosh-design-725857504.jpg&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Finitial-letter-pr-logotype-company-name-725857504&docid=1PweItD2mj6BFM&tbnid=2BfvAIKP0Edk3M&vet=12ahUKEwj-ydCw4N6WAxVtS2cHHZa5Kp8QnPAOegQIQBAA..i&w=1500&h=1600&hcb=2&ved=2ahUKEwj-ydCw4N6WAxVtS2cHHZa5Kp8QnPAOegQIQBAA",
+      "publishedAt": "2026-09-08T10:17:04.305Z",
+      "createdAt": "2026-09-08T10:17:04.305Z",
+      "updatedAt": "2026-09-08T10:17:04.305Z",
+      "scheduledAt": "",
+      "status": "PUBLISHED",
+      "featured": false,
+      "editorPick": false,
+      "likes": 0,
+      "views": 0,
+      "tags": [],
+      "id": "xfVsmu63evo"
+    },
+    {
+      "id": "BkEpuIahpEs",
+      "title": "TestData",
+      "description": "testdatakjjjjjj",
+      "content": "<p>Test</p>",
+      "tags": [
+        "Test"
+      ],
+      "category": "AI",
+      "thumbnail": "",
+      "authorAvatar": "https://i.pravatar.cc/150?img=12",
+      "status": "PUBLISHED",
+      "createdAt": "2026-09-11T06:08:40.334Z"
+    },
+    {
+      "id": "W8P89-lWJlU",
+      "title": "TestRP",
+      "description": "TestRP",
+      "content": "<p>TetsRP</p>",
+      "tags": [
+        "TESTRP"
+      ],
+      "category": "AI",
+      "thumbnail": "",
+      "authorAvatar": "https://i.pravatar.cc/150?img=12",
+      "status": "PUBLISHED",
+      "createdAt": "2026-09-11T06:10:21.549Z"
+    },
+    {
+      "id": "ea1sdp9m1RQ",
+      "title": "TestRP",
+      "description": "testRP",
+      "content": "<p>TestRP</p>",
+      "tags": [
+        "AI"
+      ],
+      "category": "AI",
+      "thumbnail": "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800",
+      "authorAvatar": "https://i.pravatar.cc/150?img=32",
+      "status": "PUBLISHED",
+      "createdAt": "2026-09-11T06:17:09.297Z"
+    },
+    {
+      "id": "2Gvvlqh1IKM",
+      "title": "RPTEST",
+      "description": "RPTESTCHANGE",
+      "content": "<p>RPTEST</p>",
+      "tags": [
+        "AI"
+      ],
+      "category": "AI",
+      "thumbnail": "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800",
+      "authorId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "authorName": "rupalipatilfe@gmail.com",
+      "authorAvatar": "https://i.pravatar.cc/150?img=32",
+      "status": "PUBLISHED",
+      "createdAt": "2026-09-11T06:27:28.658Z",
+      "updatedAt": "2026-09-11T06:27:46.014Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "articleId": "1",
+      "userId": "user-101",
+      "userName": "Amit",
+      "userAvatar": "https://i.pravatar.cc/150?img=3",
+      "content": "Very useful article!",
+      "parentId": null,
+      "likes": 5,
+      "likedBy": [
+        "user-201",
+        "user-202"
+      ],
+      "createdAt": "2026-09-05T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "articleId": "1",
+      "userId": "user-102",
+      "userName": "Sneha",
+      "userAvatar": "https://i.pravatar.cc/150?img=5",
+      "content": "Thanks! This helped me understand Angular.",
+      "parentId": "1",
+      "likes": 2,
+      "likedBy": [
+        "user-203"
+      ],
+      "createdAt": "2026-09-05T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "articleId": "1",
+      "userId": "user-103",
+      "userName": "Rahul",
+      "userAvatar": "https://i.pravatar.cc/150?img=8",
+      "content": "The standalone components section was great.",
+      "parentId": null,
+      "likes": 8,
+      "likedBy": [
+        "user-201",
+        "user-202",
+        "user-204"
+      ],
+      "createdAt": "2026-09-06T09:00:00Z"
+    },
+    {
+      "articleId": "1",
+      "userId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "userName": "rupalipatilfe@gmail.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=12",
+      "content": "test",
+      "parentId": null,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2026-09-08T11:58:52.091Z",
+      "id": "MEIvH671MUs"
+    },
+    {
+      "articleId": "1",
+      "userId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "userName": "rupalipatilfe@gmail.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=12",
+      "content": "test1",
+      "parentId": "MEIvH671MUs",
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2026-09-08T11:59:07.612Z",
+      "id": "_oGbtbnZd1g"
+    },
+    {
+      "articleId": "2",
+      "userId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "userName": "rupalipatilfe@gmail.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=12",
+      "content": "Test2nd article comment",
+      "parentId": null,
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2026-09-11T06:35:09.616Z",
+      "id": "1AbH3sUiV10"
+    },
+    {
+      "articleId": "2",
+      "userId": "tkJPghej6KQh7gFDrOxa4Osdty53",
+      "userName": "rupalipatilfe@gmail.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=12",
+      "content": "reply comment",
+      "parentId": "1AbH3sUiV10",
+      "likes": 0,
+      "likedBy": [],
+      "createdAt": "2026-09-11T06:35:42.397Z",
+      "id": "B8G4ew68F3E"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

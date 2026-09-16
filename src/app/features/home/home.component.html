@@ -1,0 +1,46 @@
+<!-- HERO -->
+<div class="home-container">
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <span class="hero-label"> ✦ ONLINE PUBLISHING PLATFORM </span>
+
+      <h1>
+        Discover stories<br />
+        worth reading.
+      </h1>
+
+      <p>
+        Explore insightful articles from writers around the world. Read, share and join the
+        conversation.
+      </p>
+
+      <a mat-flat-button color="primary" routerLink="/articles"> Explore Articles </a>
+      &nbsp;
+      <a mat-flat-button color="primary" routerLink="/authors"> Explore Authors </a>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  @if (featuredArticles().length > 0) {
+    <section class="featured-section">
+      <div class="section-header">
+        <div>
+          <span class="section-label">FEATURED</span>
+          <h2>Editor's Picks</h2>
+        </div>
+
+        <a mat-button routerLink="/articles">
+          View all
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+
+      <div class="featured-grid">
+        @for (article of featuredArticles(); track article.id) {
+          <app-article-card [article]="article" variant="featured" />
+        }
+      </div>
+    </section>
+  }
+</div>

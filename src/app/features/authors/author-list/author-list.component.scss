@@ -1,0 +1,167 @@
+.authors-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.authors-hero {
+  padding: 80px 8% 60px;
+  background: #f3f1ed;
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #777;
+  }
+
+  h1 {
+    margin: 12px 0;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 650px;
+    margin: 0;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
+
+.authors-section {
+  padding: 50px 8%;
+}
+
+.search-container {
+  margin-bottom: 40px;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 500px;
+}
+
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.author-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.author-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.author-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-content {
+  padding: 24px;
+
+  h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+  }
+}
+
+.author-role {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #777;
+}
+
+.author-bio {
+  color: #666;
+  line-height: 1.6;
+  min-height: 75px;
+}
+
+.author-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 15px 0;
+
+  color: #777;
+  font-size: 14px;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.author-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.loading-state,
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  p {
+    color: #777;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .authors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .authors-hero {
+    padding: 50px 6%;
+
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .authors-section {
+    padding: 35px 6%;
+  }
+
+  .authors-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

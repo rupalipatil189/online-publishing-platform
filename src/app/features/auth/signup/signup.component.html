@@ -1,0 +1,79 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <span class="section-label"> JOIN OUR COMMUNITY </span>
+
+      <h1>Create Account</h1>
+
+      <p>Create an account to publish and interact with stories.</p>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="error-message">
+        {{ errorMessage() }}
+      </div>
+    }
+
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Name </mat-label>
+
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Email </mat-label>
+
+        <input matInput type="email" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Password </mat-label>
+
+        <input matInput type="password" formControlName="password" />
+
+        @if (signupForm.controls.password.touched && signupForm.controls.password.invalid) {
+          <mat-error> Password must contain at least 6 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label> Confirm Password </mat-label>
+
+        <input matInput type="password" formControlName="confirmPassword" />
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="submit-button"
+        [disabled]="loading()"
+      >
+        {{ loading() ? 'Creating account...' : 'Create Account' }}
+      </button>
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <button
+      mat-stroked-button
+      type="button"
+      class="google-button"
+      (click)="loginWithGoogle()"
+      [disabled]="loading()"
+    >
+      <mat-icon> login </mat-icon>
+
+      Sign up with Google
+    </button>
+
+    <div class="auth-footer">
+      Already have an account?
+
+      <a routerLink="/login"> Sign in </a>
+    </div>
+  </div>
+</div>

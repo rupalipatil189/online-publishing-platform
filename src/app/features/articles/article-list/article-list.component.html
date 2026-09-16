@@ -1,0 +1,93 @@
+<div class="articles-page">
+  <section class="articles-section">
+    <!-- HEADER -->
+
+    <div class="section-header">
+      <div>
+        <span class="section-label"> LATEST STORIES </span>
+
+        <h1>Explore Articles</h1>
+      </div>
+    </div>
+
+    <!-- SEARCH + SORT -->
+
+    <div class="filters">
+      <mat-form-field appearance="outline">
+        <mat-label>Search articles</mat-label>
+
+        <mat-icon matPrefix> search </mat-icon>
+
+        <input
+          matInput
+          [value]="searchText()"
+          (input)="onSearch($event)"
+          placeholder="Search by title, author..."
+        />
+
+        @if (searchText()) {
+          <button mat-icon-button matSuffix type="button" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sort by</mat-label>
+
+        <mat-select [value]="sortBy()" (valueChange)="onSortChange($event)">
+          <mat-option value="latest"> Latest </mat-option>
+
+          <mat-option value="popular"> Most Popular </mat-option>
+
+          <mat-option value="editor"> Editor's Pick </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- RESULT COUNT -->
+
+    <div class="result-info">
+      {{ filteredArticles().length }} articles found
+
+      @if (searchText()) {
+        for "{{ searchText() }}"
+      }
+    </div>
+
+    <!-- ARTICLES -->
+
+    @if (paginatedArticles().length > 0) {
+      <div class="articles-grid">
+        @for (article of paginatedArticles(); track article.id) {
+          <app-article-card [article]="article" />
+        }
+      </div>
+    }
+
+    <!-- EMPTY STATE -->
+
+    @if (filteredArticles().length === 0) {
+      <div class="empty-state">
+        <mat-icon>search_off</mat-icon>
+
+        <h3>No articles found</h3>
+
+        <p>Try searching with a different keyword.</p>
+
+        <button mat-flat-button color="primary" (click)="clearSearch()">Clear Search</button>
+      </div>
+    }
+
+    <!-- PAGINATION -->
+
+    @if (filteredArticles().length > 0) {
+      <app-pagination
+        [length]="filteredArticles().length"
+        [pageSize]="pageSize()"
+        [pageIndex]="pageIndex()"
+        (pageChange)="onPageChange($event)"
+      />
+    }
+  </section>
+</div>

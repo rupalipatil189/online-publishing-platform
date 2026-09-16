@@ -1,0 +1,145 @@
+<div class="my-listing-page">
+  <div class="page-header">
+    <div>
+      <h1>My Articles</h1>
+
+      <p>Manage your articles, drafts and published posts.</p>
+    </div>
+
+    <button mat-flat-button color="primary" routerLink="/create-article">
+      <mat-icon> add </mat-icon>
+
+      Create New Post
+    </button>
+  </div>
+
+  @if (successMessage()) {
+    <div class="success-message">
+      <mat-icon> check_circle </mat-icon>
+
+      {{ successMessage() }}
+    </div>
+  }
+
+  @if (errorMessage()) {
+    <div class="error-message">
+      <mat-icon> error </mat-icon>
+
+      {{ errorMessage() }}
+    </div>
+  }
+
+  @if (loading()) {
+    <div class="loading-container">
+      <mat-icon class="loading-icon"> sync </mat-icon>
+
+      <p>Loading your articles...</p>
+    </div>
+  }
+
+  @if (!loading() && articles().length === 0) {
+    <mat-card class="empty-card">
+      <mat-icon> article </mat-icon>
+
+      <h2>No Articles Yet</h2>
+
+      <p>You haven't created any articles yet.</p>
+
+      <button mat-flat-button color="primary" routerLink="/create-article">
+        <mat-icon> add </mat-icon>
+
+        Create Your First Article
+      </button>
+    </mat-card>
+  }
+
+  @if (!loading() && articles().length > 0) {
+    <div class="article-grid">
+      @for (article of articles(); track article.id) {
+        <mat-card class="article-card">
+          <div class="thumbnail-container">
+            @if (article.thumbnail) {
+              <img [src]="article.thumbnail" [alt]="article.title" class="article-thumbnail" />
+
+            } @else {
+              <div class="thumbnail-placeholder">
+                <mat-icon> image </mat-icon>
+              </div>
+            }
+
+            <!-- STATUS -->
+
+            <span class="status-badge" [class]="getStatusClass(article.status)">
+              {{ article.status }}
+            </span>
+          </div>
+
+          <mat-card-content>
+            <h2 class="article-title">
+              {{ article.title }}
+            </h2>
+
+            <p class="article-description">
+              {{ article.description }}
+            </p>
+
+            <!-- CATEGORY -->
+
+            <div class="article-meta">
+              <span class="category">
+                <mat-icon> category </mat-icon>
+
+                {{ article.category }}
+              </span>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="author-section">
+              <img [src]="article.authorAvatar" [alt]="article.authorName" class="author-avatar" />
+
+              <div class="author-details">
+                <span class="author-name">
+                  {{ article.authorName }}
+                </span>
+
+                <span class="article-date">
+                  {{ article.createdAt | date: 'MMM d, yyyy' }}
+                </span>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions class="article-actions">
+            <!-- VIEW -->
+
+            <button mat-button color="primary" (click)="viewArticle(article)">
+              <mat-icon> visibility </mat-icon>
+
+              View
+            </button>
+
+            <!-- EDIT -->
+
+            <button mat-stroked-button (click)="editArticle(article)">
+              <mat-icon> edit </mat-icon>
+
+              Edit
+            </button>
+
+            <!-- DELETE -->
+
+            <button
+              mat-icon-button
+              color="warn"
+              aria-label="Delete article"
+              (click)="deleteArticle(article)"
+            >
+              <mat-icon> delete </mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  }
+</div>

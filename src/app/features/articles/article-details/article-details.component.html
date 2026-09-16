@@ -1,0 +1,202 @@
+<div class="article-details-page">
+  <!-- LOADING -->
+
+  @if (loading()) {
+    <div class="loading-state">
+      <mat-icon> hourglass_empty </mat-icon>
+
+      <p>Loading article...</p>
+    </div>
+  }
+
+  <!-- ARTICLE NOT FOUND -->
+
+  @if (!loading() && !article()) {
+    <div class="empty-state">
+      <mat-icon> article </mat-icon>
+
+      <h2>Article not found</h2>
+
+      <p>The article you are looking for does not exist or is no longer available.</p>
+
+      <a mat-flat-button color="primary" routerLink="/articles"> Browse Articles </a>
+    </div>
+  }
+
+  <!-- ARTICLE DETAILS -->
+
+  @if (article()) {
+    <article class="article-container">
+      <a mat-button routerLink="/articles" class="back-button">
+        <mat-icon> arrow_back </mat-icon>
+
+        Back to Articles
+      </a>
+
+      <!-- CATEGORY -->
+
+      <div class="article-category">
+        {{ article()?.category }}
+      </div>
+
+      <!-- TITLE -->
+
+      <h1 class="article-title">
+        {{ article()?.title }}
+      </h1>
+
+      <!-- DESCRIPTION -->
+
+      <p class="article-description">
+        {{ article()?.description }}
+      </p>
+
+      <!-- AUTHOR -->
+
+      <div class="article-header-meta">
+        <div class="author-info">
+          @if (article()!.authorAvatar) {
+            <img
+              class="author-avatar"
+              [src]="article()?.authorAvatar"
+              [alt]="article()?.authorName"
+            />
+          }
+
+          <div>
+            <div class="author-name">
+              {{ article()?.authorName }}
+            </div>
+
+            <div class="publish-date">
+              Published
+              {{ article()?.publishedAt | date: 'MMMM d, yyyy' }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE IMAGE -->
+
+      <div class="article-image">
+        <img [src]="article()?.thumbnail" [alt]="article()!.title" />
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+
+      <div class="article-content">
+        {{ article()?.content }}
+      </div>
+
+      <!-- TAGS -->
+
+      @if (article()!.tags?.length) {
+        <div class="article-tags">
+          @for (tag of article()?.tags; track tag) {
+            <span class="tag"> #{{ tag }} </span>
+          }
+        </div>
+      }
+
+      <!-- ARTICLE STATS -->
+
+      <div class="article-stats">
+        <span>
+          <mat-icon> visibility </mat-icon>
+
+          {{ article()?.views }} views
+        </span>
+
+        <span>
+          <mat-icon> favorite_border </mat-icon>
+
+          {{ article()?.likes }} likes
+        </span>
+      </div>
+
+      <app-comments [articleId]="articleIdTest()"> </app-comments>
+
+      <!-- AUTHOR BIO -->
+
+      <mat-divider></mat-divider>
+
+      <section class="author-section">
+        <span class="section-label"> ABOUT THE AUTHOR </span>
+
+        <div class="author-profile">
+          @if (article()!.authorAvatar) {
+            <img
+              class="author-profile-image"
+              [src]="article()!.authorAvatar"
+              [alt]="article()!.authorName"
+            />
+          }
+
+          <div class="author-profile-content">
+            <h2>
+              {{ article()!.authorName }}
+            </h2>
+
+            <p>
+              {{
+                article()!.authorBio ||
+                  'Writer and contributor sharing ideas, stories and insights with readers.'
+              }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OTHER ARTICLES BY AUTHOR -->
+
+      @if (authorArticles().length > 0) {
+        <section class="author-articles-section">
+          <div class="section-header">
+            <div>
+              <span class="section-label"> FROM THE AUTHOR </span>
+
+              <h2>
+                More from
+                {{ article()!.authorName }}
+              </h2>
+            </div>
+          </div>
+
+          <div class="articles-grid">
+            @for (authorArticle of authorArticles(); track authorArticle.id) {
+              <app-article-card [article]="authorArticle" />
+            }
+          </div>
+        </section>
+      }
+
+      <!-- RELATED ARTICLES -->
+
+      @if (relatedArticles().length > 0) {
+        <section class="related-section">
+          <mat-divider></mat-divider>
+
+          <div class="section-header">
+            <div>
+              <span class="section-label"> YOU MAY ALSO LIKE </span>
+
+              <h2>Related Articles</h2>
+            </div>
+
+            <a mat-button routerLink="/articles">
+              View all
+
+              <mat-icon> arrow_forward </mat-icon>
+            </a>
+          </div>
+
+          <div class="articles-grid">
+            @for (relatedArticle of relatedArticles(); track relatedArticle.id) {
+              <app-article-card [article]="relatedArticle" />
+            }
+          </div>
+        </section>
+      }
+    </article>
+  }
+</div>
