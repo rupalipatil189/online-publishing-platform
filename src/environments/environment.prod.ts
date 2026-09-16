@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://YOUR-RENDER-API.onrender.com',
+  apiUrl: 'https://online-publishing-platform.onrender.com',
   firebase: {
     apiKey: 'AIzaSyApRB-GWMKBiYuZcFWwTcHdrI1XKKGMeqo',
     authDomain: 'online-publishing-platfo-14ea4.firebaseapp.com',
